@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Back End Assessment</title>
+  <link rel='stylesheet' href='./index.css' />
+</head>
+
+<body class="container">
+  <input type="color" id='color-picker' />
+
+
+  <button id="complimentButton">Get a compliment</button>
+  <button id="fortuneBtn">Get a Fortune</button>
+
+  <form id='add-fortune-form'>
+    <input type='text' id='fortune-input' />
+    <button type='submit' id='add-fortune-btn'>ADD A FORTUNE</button>
+  </form>
+
+  <select id='num-selector'>
+    <option value=''></option>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+  </select>
+
+
+  <section id="fortuneDisplay"></section>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='../main.js'></script>
+</body>
+
+</html>

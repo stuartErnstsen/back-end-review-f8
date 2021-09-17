@@ -34,9 +34,7 @@ module.exports = {
         res.status(200).send(favColor)
     },
     getPokemon: async (req, res) => {
-        // const poke = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
 
-        // res.status(200).send(poke)
         axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
             .then(res2 => {
                 console.log(res2.data)

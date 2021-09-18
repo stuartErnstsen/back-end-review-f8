@@ -86,7 +86,22 @@ numSelector.addEventListener('change', (e) => {
 const getPoke = () => {
 
     axios.get('http://localhost:4000/api/poke')
-        .then(res => console.log(res.data))
+        .then(res => {
+            console.log(res.data)
+            const { name, sprites, stats } = res.data
+            const element = document.createElement('div')
+
+            const statElementArray = stats.map(statObj => {
+                return `<p><span>${statObj.stat.name}</span>: ${statObj.base_stat}</p>`
+            })
+
+            element.innerHTML =
+                `<h2>${name}</h2>
+                 <img src='${sprites.front_default}' alt='${name}-pic' />
+                 ${statElementArray.join('')}`
+            console.log(element)
+            body.append(element)
+        })
         .catch(err => console.log(err))
 }
 

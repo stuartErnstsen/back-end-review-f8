@@ -9,7 +9,7 @@ const fortunes = [
     "Don't drop that dun da dun"
 ]
 
-let favColor = '#fff'
+let favColor = '#7d7d7d'
 
 module.exports = {
     getFortune: (req, res) => {
@@ -34,10 +34,9 @@ module.exports = {
         res.status(200).send(favColor)
     },
     getPokemon: async (req, res) => {
-
-        axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
+        const randomPokeNum = Math.ceil(Math.random() * 150)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokeNum}`)
             .then(res2 => {
-                console.log(res2.data)
                 res.status(200).send(res2.data)
             })
             .catch(err => {

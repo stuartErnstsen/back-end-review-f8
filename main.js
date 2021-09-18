@@ -90,15 +90,20 @@ const getPoke = () => {
             console.log(res.data)
             const { name, sprites, stats } = res.data
             const element = document.createElement('div')
+            element.classList.add('pokemon-container')
 
-            const statElementArray = stats.map(statObj => {
+            const statElementList = stats.map(statObj => {
                 return `<p><span>${statObj.stat.name}</span>: ${statObj.base_stat}</p>`
-            })
+            }).join('')
 
             element.innerHTML =
-                `<h2>${name}</h2>
-                 <img src='${sprites.front_default}' alt='${name}-pic' />
-                 ${statElementArray.join('')}`
+                `<div class='title-image-container'>
+                    <h2>${name}</h2>
+                    <img src='${sprites.front_default}' alt='${name}-pic' />
+                </div>
+                <div class='stat-container'>
+                    ${statElementList}
+                </div>`
             console.log(element)
             body.append(element)
         })
@@ -106,3 +111,8 @@ const getPoke = () => {
 }
 
 getPoke();
+
+
+const addRandPokeBtn = document.getElementById('add-random-poke')
+
+addRandPokeBtn.addEventListener('click', getPoke)

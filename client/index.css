@@ -8,3 +8,26 @@ button {
     height: 30px;
     display: block;
 }
+
+
+.pokemon-container {
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.title-image-container {
+    width: 300px;
+    color: black;
+    background: white;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-container {
+    padding-left: 20px;
+    
+}
